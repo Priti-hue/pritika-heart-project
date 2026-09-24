@@ -13,6 +13,7 @@ export function Gallery() {
     requestAnimationFrame(() => { if (previous !== null) triggerRefs.current[previous]?.focus(); });
   };
   const move = (amount: number) => setActive((current) => current === null ? 0 : (current + amount + portfolio.gallery.length) % portfolio.gallery.length);
+  const activeImage = active === null ? undefined : portfolio.gallery[active];
 
   useEffect(() => {
     if (active === null) return;
@@ -36,12 +37,12 @@ export function Gallery() {
           </button>
         ))}
       </div>
-      {active !== null && (
+      {active !== null && activeImage && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center bg-overlay p-4" role="dialog" aria-modal="true" aria-label={`Image ${active + 1} of ${portfolio.gallery.length}`} onMouseDown={(event) => { if (event.target === event.currentTarget) close(); }}>
           <div className="relative flex h-full w-full max-w-6xl items-center justify-center">
             <Button ref={closeButton} variant="lightIcon" className="absolute right-0 top-0 z-10" aria-label="Close image viewer" onClick={close}><X size={22} /></Button>
             <Button variant="lightIcon" className="absolute left-0 z-10" aria-label="Previous image" onClick={() => move(-1)}><ChevronLeft size={24} /></Button>
-            <img className="max-h-[82vh] max-w-[calc(100%-6rem)] rounded-sm object-contain" src={portfolio.gallery[active].src} alt={portfolio.gallery[active].alt} />
+            <img className="max-h-[82vh] max-w-[calc(100%-6rem)] rounded-sm object-contain" src={activeImage.src} alt={activeImage.alt} />
             <Button variant="lightIcon" className="absolute right-0 z-10" aria-label="Next image" onClick={() => move(1)}><ChevronRight size={24} /></Button>
             <p className="absolute bottom-1 text-sm text-research-foreground">{active + 1} / {portfolio.gallery.length}</p>
           </div>
