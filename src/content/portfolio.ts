@@ -3,6 +3,11 @@ import tree from "../assets/giant-tree.jpeg.asset.json";
 import vineyard from "../assets/travel-vineyard.jpeg.asset.json";
 import city from "../assets/travel-city.jpeg.asset.json";
 import monument from "../assets/travel-monument.jpeg.asset.json";
+import seals from "../assets/travel-IMG_9498.jpg.asset.json";
+import temple from "../assets/travel-IMG_5111.jpg.asset.json";
+import blossoms from "../assets/travel-IMG_7053.jpg.asset.json";
+import lincoln from "../assets/travel-IMG_9100.jpg.asset.json";
+import lincolnSmile from "../assets/travel-IMG_9102.jpg.asset.json";
 import composition from "../assets/original-composition.mp4.asset.json";
 import compositionPoster from "../assets/composition-poster.jpg.asset.json";
 import resume from "../assets/Pritika-Khatri-Resume.pdf.asset.json";
@@ -84,5 +89,10 @@ export const portfolio = {
     { src: monument.url, alt: "Pritika outdoors in front of the Statue of Liberty" },
     { src: vineyard.url, alt: "Pritika standing by a wine-growing region sign with vineyards behind her" },
     { src: city.url, alt: "Pritika at the I Love NYC installation at night" },
+    { src: seals.url, alt: "Pritika smiling on a sunny beach where sea lions rest on the sand" },
+    { src: blossoms.url, alt: "Pritika standing beneath blooming cherry blossom trees" },
+    { src: temple.url, alt: "Pritika in a pink jacket in front of an illuminated stone temple at sunset" },
+    { src: lincoln.url, alt: "Pritika sitting in front of a large Abraham Lincoln head monument" },
+    { src: lincolnSmile.url, alt: "Pritika smiling in front of the Abraham Lincoln monument" },
   ],
 } as const;
