@@ -82,7 +82,8 @@ function HomePage() {
         <div className="site-container py-20 md:py-28">
           <SectionHead dark number="03" eyebrow="Doctoral research · UC Berkeley" title="Can a conversation open the door to better health?" />
           <div className="research-grid">
-          <div><p className="status-label">Ongoing research</p><h3>Chatbots, trust, and adolescent sexual and reproductive health</h3><p>{"My doctoral research explores the use of chatbots to improve adolescents’ access to sexual and reproductive health information in low- and middle-income countries. It also examines the trust adolescents feel when discussing sensitive SRH topics with a chatbot."}</p><Button asChild variant="light"><Link to="/chatbot">Try the Chatbot <ArrowRight size={16} /></Link></Button></div>
+            <div><p className="status-label">Ongoing research</p><h3>Chatbots, trust, and adolescent sexual and reproductive health</h3></div>
+            <div className="research-side"><p>{"My doctoral research explores the use of chatbots to improve adolescents’ access to sexual and reproductive health information in low- and middle-income countries. It also examines the trust adolescents feel when discussing sensitive SRH topics with a chatbot."}</p><Button asChild variant="light"><Link to="/chatbot">Try the Chatbot <ArrowRight size={16} /></Link></Button></div>
           </div>
         </div>
       </section>
