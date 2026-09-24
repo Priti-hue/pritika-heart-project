@@ -1,6 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { Button } from "./Button";
 
 const nav = [
@@ -54,7 +55,7 @@ export function SiteHeader() {
         </nav>
         <Button ref={openButton} variant="icon" className="lg:hidden" aria-label="Open menu" aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen(true)}><Menu size={22} /></Button>
       </div>
-      {open && (
+      {open && typeof document !== "undefined" && createPortal(
         <div className="fixed inset-0 z-50 bg-foreground/35 lg:hidden" onMouseDown={(event) => { if (event.target === event.currentTarget) close(true); }}>
           <div data-menu-panel id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu" className="ml-auto flex h-full w-[min(88vw,380px)] flex-col bg-background p-6 shadow-xl">
             <div className="flex items-center justify-between border-b border-border pb-5">
@@ -66,7 +67,8 @@ export function SiteHeader() {
               <Button asChild className="mt-5 w-full"><Link to="/chatbot" onClick={() => close()}>Try the Chatbot</Link></Button>
             </nav>
           </div>
-        </div>
+        </div>,
+        document.body,
       )}
     </header>
   );
