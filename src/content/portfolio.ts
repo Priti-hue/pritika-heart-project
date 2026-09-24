@@ -7,6 +7,7 @@ import composition from "../assets/original-composition.mp4.asset.json";
 import compositionPoster from "../assets/composition-poster.jpg.asset.json";
 import resume from "../assets/Pritika-Khatri-Resume.pdf.asset.json";
 import socialPreview from "../assets/pritika-khatri-social-preview.jpg.asset.json";
+import poemRecitation from "../assets/poem-khursani.mp3.asset.json";
 
 export const portfolio = {
   name: "Pritika Khatri",
@@ -71,6 +72,12 @@ export const portfolio = {
     "A Study on the dietary intake pattern of nurses working in COVID and non-COVID hospitals in Nepal — Submitted to Nepal Health Research Council",
     "Housing Conditions, Self-Reported health status and Nutritional Status of 6–59 months Children in Bharatpur Metropolitan City, Nepal — Submitted to PLOS Global Public Health",
   ],
+  poetry: {
+    title: "Khursani",
+    language: "Nepali",
+    src: poemRecitation.url,
+    performer: "Recited by Pritika Khatri",
+  },
   composition: { src: composition.url, poster: compositionPoster.url },
   gallery: [
     { src: tree.url, alt: "Pritika standing at the base of an immense sequoia tree" },
