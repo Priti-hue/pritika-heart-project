@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowDown, ArrowRight, Download, ExternalLink, Mail } from "lucide-react";
+import { ArrowDown, ArrowRight, ExternalLink, Mail } from "lucide-react";
 import { Button } from "../components/Button";
 import { Gallery } from "../components/Gallery";
 import { portfolio } from "../content/portfolio";
@@ -42,7 +42,6 @@ function HomePage() {
             </div>
             <div className="quiet-links">
               <a href={portfolio.linkedin} target="_blank" rel="noreferrer">LinkedIn <ExternalLink size={13} /></a>
-              <a href={portfolio.resume} download="Pritika-Khatri-Resume.pdf">Download resume <Download size={13} /></a>
             </div>
           </div>
         </div>
@@ -83,8 +82,7 @@ function HomePage() {
         <div className="site-container py-20 md:py-28">
           <SectionHead dark number="03" eyebrow="Doctoral research · UC Berkeley" title="Can a conversation open the door to better health?" />
           <div className="research-grid">
-            <div><p className="status-label">Ongoing research</p><h3>Chatbots, trust, and adolescent sexual and reproductive health</h3><p>{"My doctoral research explores the use of chatbots to improve adolescents’ access to sexual and reproductive health information in low- and middle-income countries. It also examines the trust adolescents feel when discussing sensitive SRH topics with a chatbot."}</p><Button asChild variant="light"><Link to="/chatbot">Try the Chatbot <ArrowRight size={16} /></Link></Button></div>
-            <ol className="question-list">{portfolio.researchQuestions.map(([label, question], index) => <li key={label}><span>0{index + 1}</span><div><h4>{label}</h4><p>{question}</p></div></li>)}</ol>
+          <div><p className="status-label">Ongoing research</p><h3>Chatbots, trust, and adolescent sexual and reproductive health</h3><p>{"My doctoral research explores the use of chatbots to improve adolescents’ access to sexual and reproductive health information in low- and middle-income countries. It also examines the trust adolescents feel when discussing sensitive SRH topics with a chatbot."}</p><Button asChild variant="light"><Link to="/chatbot">Try the Chatbot <ArrowRight size={16} /></Link></Button></div>
           </div>
         </div>
       </section>
@@ -109,7 +107,7 @@ function HomePage() {
       <section id="contact" className="contact-section scroll-mt-20">
         <div className="site-container contact-grid">
           <div><p className="eyebrow">06 · Contact</p><h2>Let’s connect.</h2></div>
-          <div><p className="contact-copy">For conversations about public health, adolescent health research, community partnerships, or creative collaboration, I’d love to hear from you.</p><div className="contact-links"><a href={`mailto:${portfolio.email}`}><Mail size={18} />{portfolio.email}</a><a href={portfolio.linkedin} target="_blank" rel="noreferrer">LinkedIn <ExternalLink size={16} /></a><a href={portfolio.resume} download="Pritika-Khatri-Resume.pdf">Download resume <Download size={16} /></a></div></div>
+          <div><p className="contact-copy">For conversations about public health, adolescent health research, community partnerships, or creative collaboration, I’d love to hear from you.</p><div className="contact-links"><a href={`mailto:${portfolio.email}`}><Mail size={18} />{portfolio.email}</a><a href={portfolio.linkedin} target="_blank" rel="noreferrer">LinkedIn <ExternalLink size={16} /></a></div></div>
         </div>
       </section>
       <footer className="site-container flex flex-col gap-2 border-t border-border py-7 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between"><span>Pritika Khatri</span><span>© {new Date().getFullYear()}</span></footer>
