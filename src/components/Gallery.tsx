@@ -30,13 +30,27 @@ export function Gallery() {
 
   return (
     <>
-      <div className="gallery-grid">
-        {portfolio.gallery.map((image, index) => (
-          <button key={image.src} ref={(el) => { triggerRefs.current[index] = el; }} className={`gallery-item gallery-item-${index + 1}`} onClick={() => setActive(index)} aria-label={`Open image ${index + 1} of ${portfolio.gallery.length}: ${image.alt}`}>
-            <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
-          </button>
-        ))}
-      </div>
+      <>
+        <div className="gallery-grid">
+          {portfolio.gallery.slice(0, 4).map((image, index) => (
+            <button key={image.src} ref={(el) => { triggerRefs.current[index] = el; }} className={`gallery-item gallery-item-${index + 1}`} onClick={() => setActive(index)} aria-label={`Open image ${index + 1} of ${portfolio.gallery.length}: ${image.alt}`}>
+              <img src={image.src} alt={image.alt} loading={index < 2 ? "eager" : "lazy"} decoding="async" />
+            </button>
+          ))}
+        </div>
+        {portfolio.gallery.length > 4 && (
+          <div className="gallery-more">
+            {portfolio.gallery.slice(4).map((image, offset) => {
+              const index = offset + 4;
+              return (
+                <button key={image.src} ref={(el) => { triggerRefs.current[index] = el; }} className="gallery-item" onClick={() => setActive(index)} aria-label={`Open image ${index + 1} of ${portfolio.gallery.length}: ${image.alt}`}>
+                  <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
+                </button>
+              );
+            })}
+          </div>
+        )}
+      </>
       {active !== null && activeImage && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center bg-overlay p-4" role="dialog" aria-modal="true" aria-label={`Image ${active + 1} of ${portfolio.gallery.length}`} onMouseDown={(event) => { if (event.target === event.currentTarget) close(); }}>
           <div className="relative flex h-full w-full max-w-6xl items-center justify-center">
