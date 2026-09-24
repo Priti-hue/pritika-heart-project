@@ -1,24 +1,118 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowDown, ArrowRight, Download, ExternalLink, Mail } from "lucide-react";
+import { Button } from "../components/Button";
+import { Gallery } from "../components/Gallery";
+import { portfolio } from "../content/portfolio";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "Pritika Khatri | Public Health, Research & Creative Work" },
+      { name: "description", content: "Portfolio of Pritika Khatri, a public health leader and DrPH student at UC Berkeley working across research, community partnerships, poetry, music, and adventure." },
+      { property: "og:title", content: "Pritika Khatri | Public Health, Research & Creative Work" },
+      { property: "og:description", content: "Public health leadership, doctoral research, selected writing, and creative work by Pritika Khatri." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+      { property: "og:image", content: portfolio.socialPreview },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: portfolio.socialPreview },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+  }),
+  component: HomePage,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function SectionHead({ number, eyebrow, title, dark = false }: { number: string; eyebrow: string; title: string; dark?: boolean }) {
+  return <div className="section-head"><div className={`section-rule ${dark ? "border-research-border" : "border-border"}`}><span>{number}</span><span>{eyebrow}</span></div><h2 className="section-title">{title}</h2></div>;
+}
+
+function HomePage() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <section className="site-container hero-section" aria-labelledby="hero-title">
+        <div className="hero-copy">
+          <p className="eyebrow animate-enter">{portfolio.descriptor}</p>
+          <h1 id="hero-title" className="hero-name animate-enter-delay">Pritika<br />Khatri</h1>
+          <div className="hero-statement animate-enter-later">
+            <p>{portfolio.statement}</p>
+            <p className="hero-intro">{portfolio.intro}</p>
+            <div className="flex flex-wrap gap-3">
+              <Button asChild><a href="#work">Explore my work <ArrowDown size={16} /></a></Button>
+              <Button asChild variant="secondary"><a href="#contact">Get in touch</a></Button>
+            </div>
+            <div className="quiet-links">
+              <a href={portfolio.linkedin} target="_blank" rel="noreferrer">LinkedIn <ExternalLink size={13} /></a>
+              <a href={portfolio.resume} download="Pritika-Khatri-Resume.pdf">Download resume <Download size={13} /></a>
+            </div>
+          </div>
+        </div>
+        <div className="hero-portrait animate-enter-delay"><img src={portfolio.headshot} alt="Portrait of Pritika Khatri" fetchPriority="high" /></div>
+        <p className="hero-context">{portfolio.context}</p>
+      </section>
+
+      <section id="about" className="site-container page-section scroll-mt-24">
+        <SectionHead number="01" eyebrow="About" title="A life shaped by service and curiosity." />
+        <div className="about-grid">
+          <p className="lead-copy">{portfolio.about}</p>
+          <div>
+            <p className="mini-heading">Education</p>
+            <div className="divide-y divide-border border-y border-border">
+              {portfolio.education.map(([degree, institution, status]) => <div key={degree} className="education-row"><div><h3>{degree}</h3><p>{institution}</p></div>{status && <span>{status}</span>}</div>)}
+            </div>
+            <div className="mt-9"><p className="mini-heading">Languages</p><p className="text-base text-muted-foreground">{portfolio.languages.join(" · ")}</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="work" className="site-container page-section scroll-mt-24">
+        <SectionHead number="02" eyebrow="Selected work" title="Leadership grounded in communities." />
+        <div className="work-list">
+          {portfolio.work.map((item, index) => <article key={item.organization} className="work-row">
+            <div className="work-index">0{index + 1}</div>
+            <div><p className="eyebrow text-accent">{item.organization}</p><h3>{item.role}</h3><p className="work-dates">{item.dates}</p></div>
+            <div><p className="work-description">{item.description}</p><ul className="evidence-list">{item.evidence.map((line) => <li key={line}>{line}</li>)}</ul></div>
+          </article>)}
+        </div>
+        <details className="timeline-details">
+          <summary>Earlier roles and additional experience <span aria-hidden="true">+</span></summary>
+          <div className="timeline">{portfolio.earlier.map((item) => <article key={item.role}><p className="timeline-date">{item.dates}</p><div><h3>{item.role}</h3><p className="timeline-org">{item.organization}</p><p>{item.detail}</p></div></article>)}</div>
+        </details>
+      </section>
+
+      <section id="research" className="research-section scroll-mt-20">
+        <div className="site-container py-20 md:py-28">
+          <SectionHead dark number="03" eyebrow="Doctoral research · UC Berkeley" title="Can a conversation open the door to better health?" />
+          <div className="research-grid">
+            <div><p className="status-label">Ongoing research</p><h3>Chatbots, trust, and adolescent sexual and reproductive health</h3><p>{"My doctoral research explores the use of chatbots to improve adolescents’ access to sexual and reproductive health information in low- and middle-income countries. It also examines the trust adolescents feel when discussing sensitive SRH topics with a chatbot."}</p><Button asChild variant="light"><Link to="/chatbot">Try the Chatbot <ArrowRight size={16} /></Link></Button></div>
+            <ol className="question-list">{portfolio.researchQuestions.map(([label, question], index) => <li key={label}><span>0{index + 1}</span><div><h4>{label}</h4><p>{question}</p></div></li>)}</ol>
+          </div>
+        </div>
+      </section>
+
+      <section className="site-container page-section" aria-labelledby="writing-heading">
+        <div id="writing-heading"><SectionHead number="04" eyebrow="Selected writing" title="Research and perspectives." /></div>
+        <div className="reading-list">{portfolio.writing.map((item) => <article key={item.title}><span className="status-chip">{item.label}</span><h3>{item.title}</h3><p>{item.authors}</p></article>)}</div>
+        <details className="more-writing"><summary>More research <span aria-hidden="true">+</span></summary><ul>{portfolio.moreWriting.map((item) => <li key={item}>{item}</li>)}</ul></details>
+      </section>
+
+      <section id="beyond" className="site-container page-section scroll-mt-24">
+        <SectionHead number="05" eyebrow="Beyond work" title="Words, music, and the open road." />
+        <p className="beyond-intro">Outside my professional work, I make space for poetry, original music, and adventure.</p>
+        <div className="creative-grid">
+          <article className="creative-feature"><p className="mini-heading">Poetry</p><h3>Poetry in performance</h3><p>Pritika gave a solo poetry recital at Sarwanam Theatre in Kathmandu in 2022.</p><a className="text-link" href="https://nepallive.com/story/285788" target="_blank" rel="noreferrer">Nepal Live coverage <ExternalLink size={14} /></a><div className="media-empty"><span>Recording coming soon</span></div></article>
+          <article className="creative-feature"><p className="mini-heading">Original music</p><h3>Original composition</h3><p>Original composition by Pritika Khatri.</p><video className="composition-video" src={portfolio.composition.src} poster={portfolio.composition.poster} controls preload="metadata" playsInline aria-label="Original composition by Pritika Khatri">Your browser does not support video playback.</video></article>
+        </div>
+        <div className="gallery-heading"><p className="mini-heading">Travel and adventure</p><p>Moments from the open road.</p></div>
+        <Gallery />
+      </section>
+
+      <section id="contact" className="contact-section scroll-mt-20">
+        <div className="site-container contact-grid">
+          <div><p className="eyebrow">06 · Contact</p><h2>Let’s connect.</h2></div>
+          <div><p className="contact-copy">For conversations about public health, adolescent health research, community partnerships, or creative collaboration, I’d love to hear from you.</p><div className="contact-links"><a href={`mailto:${portfolio.email}`}><Mail size={18} />{portfolio.email}</a><a href={portfolio.linkedin} target="_blank" rel="noreferrer">LinkedIn <ExternalLink size={16} /></a><a href={portfolio.resume} download="Pritika-Khatri-Resume.pdf">Download resume <Download size={16} /></a></div></div>
+        </div>
+      </section>
+      <footer className="site-container flex flex-col gap-2 border-t border-border py-7 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between"><span>Pritika Khatri</span><span>© {new Date().getFullYear()}</span></footer>
+    </>
   );
 }
