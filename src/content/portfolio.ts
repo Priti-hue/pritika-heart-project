@@ -21,7 +21,6 @@ export const portfolio = {
   descriptor: "Public health leader · Doctoral researcher · Poet",
   statement: "Public health, with people at the center.",
   intro: "I work across public health leadership, research, and community partnerships to improve access to care. My doctoral work at UC Berkeley explores chatbots, adolescent health, and the trust that makes sensitive conversations possible.",
-  context: "Experience across Nepal, Nigeria, India, and the United States.",
   email: "Pritika.khatri@berkeley.edu",
   linkedin: "https://www.linkedin.com/in/khatrip/",
   headshot: headshot.url,
@@ -35,7 +34,7 @@ export const portfolio = {
     creditUrl: "https://commons.wikimedia.org/wiki/File:Sather_Tower_from_Memorial_Glade.jpg",
     license: "CC BY-SA 4.0",
   },
-  about: "I’m a public health leader from Dolakha, Nepal, with 16 years of experience across government, nonprofit, healthcare, and private-sector settings. My work spans adolescent and maternal health, mental health, health systems, and clinical research. Alongside this work, I write and recite poetry, compose music, and make time for travel and adventure.",
+  about: "I’m a public health leader from Dolakha, Nepal, with 16 years of experience across government, nonprofit, healthcare, and private-sector settings. My work has taken me across Nepal, Nigeria, India, and the United States, spanning adolescent and maternal health, mental health, health systems, and clinical research. Alongside this work, I write and recite poetry, compose music, and make time for travel and adventure.",
   education: [
     ["Doctor of Public Health", "University of California, Berkeley", "Ongoing"],
     ["Master of Public Health", "Institute of Medicine, Nepal", ""],

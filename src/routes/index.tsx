@@ -118,7 +118,7 @@ function HomePage() {
           <div><p className="contact-copy">For conversations about public health, adolescent health research, community partnerships, or creative collaboration, I’d love to hear from you.</p><div className="contact-links"><a href={`mailto:${portfolio.email}`}><Mail size={18} />{portfolio.email}</a><a href={portfolio.linkedin} target="_blank" rel="noreferrer">LinkedIn <ExternalLink size={16} /></a></div></div>
         </div>
       </section>
-      <footer className="site-container flex flex-col gap-2 border-t border-border py-7 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between"><span>Pritika Khatri</span><span>© {new Date().getFullYear()}</span></footer>
+      <footer className="site-container flex flex-col gap-2 border-t border-border py-7 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between"><span>Pritika Khatri</span><span className="photo-credit">Campus photograph: <a href={portfolio.campus.creditUrl} target="_blank" rel="noreferrer">{portfolio.campus.credit}</a> · {portfolio.campus.license}</span><span>© {new Date().getFullYear()}</span></footer>
     </>
   );
 }
