@@ -1,20 +1,6 @@
-import headshot from "../assets/pritika-headshot.jpg.asset.json";
-import tree from "../assets/giant-tree.jpeg.asset.json";
-import vineyard from "../assets/travel-vineyard.jpeg.asset.json";
-import city from "../assets/travel-city.jpeg.asset.json";
-import monument from "../assets/travel-monument.jpeg.asset.json";
-import seals from "../assets/travel-IMG_9498.jpg.asset.json";
-import temple from "../assets/travel-IMG_5111.jpg.asset.json";
-import blossoms from "../assets/travel-IMG_7053.jpg.asset.json";
-import lincoln from "../assets/travel-IMG_9100.jpg.asset.json";
-import lincolnSmile from "../assets/travel-IMG_9102.jpg.asset.json";
-import composition from "../assets/original-composition.mp4.asset.json";
-import compositionPoster from "../assets/composition-poster.jpg.asset.json";
-import resume from "../assets/Pritika-Khatri-Resume.pdf.asset.json";
-import socialPreview from "../assets/pritika-khatri-social-preview.jpg.asset.json";
-import poemRecitation from "../assets/poem-khursani.mp3.asset.json";
-import campusWide from "../assets/uc-berkeley-campanile.jpg.asset.json";
-import campusNarrow from "../assets/uc-berkeley-campanile-1400.jpg.asset.json";
+// Media lives in public/media/ so the same files serve both the Lovable
+// deployment and a static export (e.g. GitHub Pages) straight from the repo.
+const media = (name: string) => `/media/${name}`;
 
 export const portfolio = {
   name: "Pritika Khatri",
