@@ -34,7 +34,13 @@ export const portfolio = {
     creditUrl: "https://commons.wikimedia.org/wiki/File:Sather_Tower_from_Memorial_Glade.jpg",
     license: "CC BY-SA 4.0",
   },
-  about: "I’m a public health leader from Dolakha, Nepal, with 16 years of experience across government, nonprofit, healthcare, and private-sector settings. My work has taken me across Nepal, Nigeria, India, and the United States, spanning adolescent and maternal health, mental health, health systems, and clinical research. Alongside this work, I write and recite poetry, compose music, and make time for travel and adventure.",
+  about: {
+    lead: "I’m a public health leader from Dolakha, Nepal, with 16 years of experience across government, nonprofit, healthcare, and private-sector settings.",
+    passages: [
+      "My work has taken me across Nepal, Nigeria, India, and the United States, spanning adolescent and maternal health, mental health, health systems, and clinical research.",
+      "Alongside this work, I write and recite poetry, compose music, and make time for travel and adventure.",
+    ],
+  },
   education: [
     ["Doctor of Public Health", "University of California, Berkeley", "Ongoing"],
     ["Master of Public Health", "Institute of Medicine, Nepal", ""],
