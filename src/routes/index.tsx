@@ -29,10 +29,18 @@ function SectionHead({ number, eyebrow, title, dark = false }: { number: string;
 function HomePage() {
   return (
     <>
-      <section className="site-container hero-section" aria-labelledby="hero-title">
-        <div className="hero-copy">
-          <p className="eyebrow animate-enter">{portfolio.descriptor}</p>
-          <h1 id="hero-title" className="hero-name animate-enter-delay">Pritika<br />Khatri</h1>
+      <section className="hero" aria-labelledby="hero-title">
+        <div className="hero-figure">
+          <img className="hero-photo" src={portfolio.campus.src} srcSet={`${portfolio.campus.srcSmall} 1400w, ${portfolio.campus.src} 2000w`} sizes="100vw" alt={portfolio.campus.alt} fetchPriority="high" />
+          <div className="hero-scrim" aria-hidden="true" />
+          <div className="hero-overlay">
+            <div className="site-container">
+              <p className="eyebrow hero-eyebrow animate-enter">{portfolio.descriptor}</p>
+              <h1 id="hero-title" className="hero-name animate-enter-delay">Pritika<br />Khatri</h1>
+            </div>
+          </div>
+        </div>
+        <div className="site-container hero-brief">
           <div className="hero-statement animate-enter-later">
             <p>{portfolio.statement}</p>
             <p className="hero-intro">{portfolio.intro}</p>
@@ -44,9 +52,11 @@ function HomePage() {
               <a href={portfolio.linkedin} target="_blank" rel="noreferrer">LinkedIn <ExternalLink size={13} /></a>
             </div>
           </div>
+          <div className="hero-meta">
+            <p className="hero-context">{portfolio.context}</p>
+            <p className="hero-credit">Campus photograph: <a href={portfolio.campus.creditUrl} target="_blank" rel="noreferrer">{portfolio.campus.credit}</a> · {portfolio.campus.license}</p>
+          </div>
         </div>
-        <div className="hero-portrait animate-enter-delay"><img src={portfolio.headshot} alt="Portrait of Pritika Khatri" fetchPriority="high" /></div>
-        <p className="hero-context">{portfolio.context}</p>
       </section>
 
       <section id="about" className="site-container page-section scroll-mt-24">
@@ -54,6 +64,7 @@ function HomePage() {
         <div className="about-grid">
           <p className="lead-copy">{portfolio.about}</p>
           <div>
+            <div className="about-portrait"><img src={portfolio.headshot} alt="Portrait of Pritika Khatri" loading="lazy" /></div>
             <p className="mini-heading">Education</p>
             <div className="divide-y divide-border border-y border-border">
               {portfolio.education.map(([degree, institution, status]) => <div key={degree} className="education-row"><div><h3>{degree}</h3><p>{institution}</p></div>{status && <span>{status}</span>}</div>)}
