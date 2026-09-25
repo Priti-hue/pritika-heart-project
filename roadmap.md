@@ -9,6 +9,7 @@
 
 ## Now
 - [ ] Move the headshot up so it aligns with the About text; give Education and Languages their own panel.
+- [ ] Remove the odd vertical gap between section 04 (Selected writing) and section 05 (Beyond work).
 
 ## Waiting on user
 - [ ] Whether to drop one of the two near-identical Lincoln monument photos from the gallery.
