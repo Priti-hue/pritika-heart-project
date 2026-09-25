@@ -3,7 +3,8 @@
 ## Open questions (hosting)
 - [ ] Answer: can the site be hosted on GitHub / GitHub Pages (code sync + static export + media committed in repo)?
 - [ ] Answer: does hosting on Cloudflare require paying for a custom domain?
-- [ ] Domain choice pending: user comparing pritikakhatri.com and pritikakhatri.info; no purchase confirmed yet.
+- [x] Domain chosen: pritikakhatri.com ($11.10/yr flat). Purchase card opened; awaiting confirmation in checkout.
+- [ ] After purchase: publish the project so the domain serves the site, and add both root and www.
 - [ ] Decide the hosting path, then prepare the project for it (static export, media in repo, base-path config) if the user chooses GitHub Pages or another static host.
 
 ## Waiting on user
