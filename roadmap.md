@@ -7,9 +7,9 @@
 - [ ] Publish the project so pritikakhatri.com actually serves the site.
 - [ ] Decide the hosting path, then prepare the project for it (static export, media in repo, base-path config) if the user chooses GitHub Pages or another static host.
 
-## Now
-- [ ] Move the headshot up so it aligns with the About text; give Education and Languages their own panel.
-- [ ] Remove the odd vertical gap between section 04 (Selected writing) and section 05 (Beyond work).
+## Done this pass
+- [x] Headshot lifted to align with the About text; Education and Languages moved into their own panel.
+- [x] Removed the oversized gap between section 04 (Selected writing) and section 05 (Beyond work).
 
 ## Waiting on user
 - [ ] Whether to drop one of the two near-identical Lincoln monument photos from the gallery.
