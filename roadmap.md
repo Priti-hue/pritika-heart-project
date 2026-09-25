@@ -5,8 +5,10 @@
 - [x] Answered: Cloudflare hosting is free; a custom domain is a separate registration fee either way.
 - [x] pritikakhatri.com purchased and registered; connected as primary, www redirects to it.
 - [x] Published; pritikakhatri.com serves the site (200, correct title), /chatbot 200, www redirects to the root, media assets 200.
-- [x] GitHub connected; static rework done: media now lives in public/media/ (17 files), portfolio.ts references /media/ paths, vite.config.static.ts + `bun run build:static` + .github/workflows/deploy-pages.yml added.
-- [ ] User enables GitHub Pages: repo Settings → Pages → Source: "GitHub Actions". First push to main then deploys. Optional: point pritikakhatri.com DNS at Pages later.
+- [x] GitHub connected; media committed to public/media/ (17 files), portfolio.ts references /media/ paths.
+- [x] User enabled Pages: repo Settings → Pages → Source "GitHub Actions" (repo made public, so Pages is available).
+- [ ] GitHub Pages deployment goes green: run #1 failed (artifact path `dist/client` did not exist). Fixed the build (TanStack prerender into `.output/public`) and pointed the workflow at it; run #2 must be confirmed green.
+- [ ] Optional later: point pritikakhatri.com DNS at GitHub Pages if Lovable hosting is ever dropped.
 
 ## Done this pass
 - [x] Removed the empty About gap by flowing both supporting paragraphs directly beneath the lead, beside the portrait on desktop.
@@ -21,3 +23,5 @@
 ## Notes
 - Chatbot stays a purposeful coming-soon page: no AI service, no input, no waitlist.
 - Poetry uses the real "Khursani" recording — never revert to "coming soon".
+- Pages serves the site from the domain root, so all paths stay root-absolute; the
+  priti-hue.github.io/pritika-heart-project address is only a deployment artefact.
