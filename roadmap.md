@@ -4,7 +4,7 @@
 - [x] Answered: GitHub Pages is possible but needs the static rework (code sync via Project Settings → GitHub, static export, media committed in repo) and gives up any future backend.
 - [x] Answered: Cloudflare hosting is free; a custom domain is a separate registration fee either way.
 - [x] pritikakhatri.com purchased and registered; connected as primary, www redirects to it.
-- [ ] Publish the project so pritikakhatri.com actually serves the site.
+- [x] Published; pritikakhatri.com serves the site (200, correct title), /chatbot 200, www redirects to the root, media assets 200.
 - [ ] Decide the hosting path, then prepare the project for it (static export, media in repo, base-path config) if the user chooses GitHub Pages or another static host.
 
 ## Done this pass
