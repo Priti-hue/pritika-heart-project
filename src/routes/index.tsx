@@ -68,9 +68,9 @@ function HomePage() {
               {portfolio.education.map(([degree, institution, status]) => <div key={degree} className="education-row"><div><h3>{degree}</h3><p>{institution}</p></div>{status && <span>{status}</span>}</div>)}
             </div>
           </div>
-          <div className="panel-side">
+          <div className="panel-foot">
             <p className="mini-heading">Languages</p>
-            <p className="panel-languages">{portfolio.languages.join(" · ")}</p>
+            <div className="lang-chips">{portfolio.languages.map((lang) => <span key={lang}>{lang}</span>)}</div>
           </div>
         </div>
       </section>
