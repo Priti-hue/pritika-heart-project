@@ -52,10 +52,6 @@ function HomePage() {
               <a href={portfolio.linkedin} target="_blank" rel="noreferrer">LinkedIn <ExternalLink size={13} /></a>
             </div>
           </div>
-          <div className="hero-meta">
-            <p className="hero-context">{portfolio.context}</p>
-            <p className="hero-credit">Campus photograph: <a href={portfolio.campus.creditUrl} target="_blank" rel="noreferrer">{portfolio.campus.credit}</a> · {portfolio.campus.license}</p>
-          </div>
         </div>
       </section>
 
