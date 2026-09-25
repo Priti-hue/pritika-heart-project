@@ -8,6 +8,7 @@
 - [ ] Decide the hosting path, then prepare the project for it (static export, media in repo, base-path config) if the user chooses GitHub Pages or another static host.
 
 ## Done this pass
+- [x] Removed the empty About gap by flowing both supporting paragraphs directly beneath the lead, beside the portrait on desktop.
 - [x] Headshot lifted to align with the About text; Education and Languages moved into their own panel.
 - [x] Removed the oversized gap between section 04 (Selected writing) and section 05 (Beyond work).
 - [x] About text reformatted: side labels rail, lead statement, two quiet passages, portrait beside the lead.
