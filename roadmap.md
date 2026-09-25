@@ -10,6 +10,7 @@
 ## Done this pass
 - [x] Headshot lifted to align with the About text; Education and Languages moved into their own panel.
 - [x] Removed the oversized gap between section 04 (Selected writing) and section 05 (Beyond work).
+- [x] About text reformatted: side labels rail, lead statement, two quiet passages, portrait beside the lead.
 
 ## Waiting on user
 - [ ] Whether to drop one of the two near-identical Lincoln monument photos from the gallery.

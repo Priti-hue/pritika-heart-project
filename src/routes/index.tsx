@@ -57,9 +57,21 @@ function HomePage() {
 
       <section id="about" className="site-container page-section scroll-mt-24">
         <SectionHead number="01" eyebrow="About" title="A life shaped by service and curiosity." />
-        <div className="about-grid">
-          <p className="lead-copy">{portfolio.about}</p>
-          <div className="about-portrait"><img src={portfolio.headshot} alt="Portrait of Pritika Khatri" loading="lazy" /></div>
+        <div className="about-editorial">
+          <aside className="about-rail">
+            <div><p className="rail-label">Doctoral research</p><p className="rail-value">UC Berkeley<br />Ongoing</p></div>
+            <div><p className="rail-label">Experience</p><p className="rail-value">16 years<br />Government · nonprofit · healthcare · private sector</p></div>
+            <div><p className="rail-label">Creative work</p><p className="rail-value">Poetry · Music · Travel</p></div>
+          </aside>
+          <div className="about-body">
+            <div className="about-top">
+              <p className="about-lead">{portfolio.about.lead}</p>
+              <div className="about-portrait"><img src={portfolio.headshot} alt="Portrait of Pritika Khatri" loading="lazy" /></div>
+            </div>
+            <div className="about-passages">
+              {portfolio.about.passages.map((line, index) => <p key={index}>{line}</p>)}
+            </div>
+          </div>
         </div>
         <div className="credentials-panel">
           <div>
