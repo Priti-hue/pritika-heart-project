@@ -1,20 +1,6 @@
-import headshot from "../assets/pritika-headshot.jpg.asset.json";
-import tree from "../assets/giant-tree.jpeg.asset.json";
-import vineyard from "../assets/travel-vineyard.jpeg.asset.json";
-import city from "../assets/travel-city.jpeg.asset.json";
-import monument from "../assets/travel-monument.jpeg.asset.json";
-import seals from "../assets/travel-IMG_9498.jpg.asset.json";
-import temple from "../assets/travel-IMG_5111.jpg.asset.json";
-import blossoms from "../assets/travel-IMG_7053.jpg.asset.json";
-import lincoln from "../assets/travel-IMG_9100.jpg.asset.json";
-import lincolnSmile from "../assets/travel-IMG_9102.jpg.asset.json";
-import composition from "../assets/original-composition.mp4.asset.json";
-import compositionPoster from "../assets/composition-poster.jpg.asset.json";
-import resume from "../assets/Pritika-Khatri-Resume.pdf.asset.json";
-import socialPreview from "../assets/pritika-khatri-social-preview.jpg.asset.json";
-import poemRecitation from "../assets/poem-khursani.mp3.asset.json";
-import campusWide from "../assets/uc-berkeley-campanile.jpg.asset.json";
-import campusNarrow from "../assets/uc-berkeley-campanile-1400.jpg.asset.json";
+// Media lives in public/media/ so the same files serve both the Lovable
+// deployment and a static export (e.g. GitHub Pages) straight from the repo.
+const media = (name: string) => `/media/${name}`;
 
 export const portfolio = {
   name: "Pritika Khatri",
@@ -23,12 +9,12 @@ export const portfolio = {
   intro: "I work across public health leadership, research, and community partnerships to improve access to care. My doctoral work at UC Berkeley explores chatbots, adolescent health, and the trust that makes sensitive conversations possible.",
   email: "Pritika.khatri@berkeley.edu",
   linkedin: "https://www.linkedin.com/in/khatrip/",
-  headshot: headshot.url,
-  resume: resume.url,
-  socialPreview: socialPreview.url,
+  headshot: media("pritika-headshot.jpg"),
+  resume: media("Pritika-Khatri-Resume.pdf"),
+  socialPreview: media("pritika-khatri-social-preview.jpg"),
   campus: {
-    src: campusWide.url,
-    srcSmall: campusNarrow.url,
+    src: media("uc-berkeley-campanile.jpg"),
+    srcSmall: media("uc-berkeley-campanile-1400.jpg"),
     alt: "Sather Tower, the campanile at UC Berkeley, rising above Memorial Glade on a clear day",
     credit: "Coolcaesar",
     creditUrl: "https://commons.wikimedia.org/wiki/File:Sather_Tower_from_Memorial_Glade.jpg",
@@ -95,19 +81,19 @@ export const portfolio = {
   poetry: {
     title: "Khursani",
     language: "Nepali",
-    src: poemRecitation.url,
+    src: media("poem-khursani.mp3"),
     performer: "Recited by Pritika Khatri",
   },
-  composition: { src: composition.url, poster: compositionPoster.url },
+  composition: { src: media("original-composition.mp4"), poster: media("composition-poster.jpg") },
   gallery: [
-    { src: tree.url, alt: "Pritika standing at the base of an immense sequoia tree" },
-    { src: monument.url, alt: "Pritika outdoors in front of the Statue of Liberty" },
-    { src: vineyard.url, alt: "Pritika standing by a wine-growing region sign with vineyards behind her" },
-    { src: city.url, alt: "Pritika at the I Love NYC installation at night" },
-    { src: seals.url, alt: "Pritika smiling on a sunny beach where sea lions rest on the sand" },
-    { src: blossoms.url, alt: "Pritika standing beneath blooming cherry blossom trees" },
-    { src: temple.url, alt: "Pritika in a pink jacket in front of an illuminated stone temple at sunset" },
-    { src: lincoln.url, alt: "Pritika sitting in front of a large Abraham Lincoln head monument" },
-    { src: lincolnSmile.url, alt: "Pritika smiling in front of the Abraham Lincoln monument" },
+    { src: media("giant-tree.jpeg"), alt: "Pritika standing at the base of an immense sequoia tree" },
+    { src: media("travel-monument.jpeg"), alt: "Pritika outdoors in front of the Statue of Liberty" },
+    { src: media("travel-vineyard.jpeg"), alt: "Pritika standing by a wine-growing region sign with vineyards behind her" },
+    { src: media("travel-city.jpeg"), alt: "Pritika at the I Love NYC installation at night" },
+    { src: media("travel-IMG_9498.jpg"), alt: "Pritika smiling on a sunny beach where sea lions rest on the sand" },
+    { src: media("travel-IMG_7053.jpg"), alt: "Pritika standing beneath blooming cherry blossom trees" },
+    { src: media("travel-IMG_5111.jpg"), alt: "Pritika in a pink jacket in front of an illuminated stone temple at sunset" },
+    { src: media("travel-IMG_9100.jpg"), alt: "Pritika sitting in front of a large Abraham Lincoln head monument" },
+    { src: media("travel-IMG_9102.jpg"), alt: "Pritika smiling in front of the Abraham Lincoln monument" },
   ],
 } as const;
