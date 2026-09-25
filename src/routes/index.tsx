@@ -100,7 +100,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="site-container page-section" aria-labelledby="writing-heading">
+      <section className="site-container page-section writing-section" aria-labelledby="writing-heading">
         <div id="writing-heading"><SectionHead number="04" eyebrow="Selected writing" title="Research and perspectives." /></div>
         <div className="reading-list">{portfolio.writing.map((item) => <article key={item.title}><span className="status-chip">{item.label}</span><h3>{item.title}</h3><p>{item.authors}</p></article>)}</div>
         <details className="more-writing"><summary>More research <span aria-hidden="true">+</span></summary><ul>{portfolio.moreWriting.map((item) => <li key={item}>{item}</li>)}</ul></details>
