@@ -13,6 +13,8 @@ import compositionPoster from "../assets/composition-poster.jpg.asset.json";
 import resume from "../assets/Pritika-Khatri-Resume.pdf.asset.json";
 import socialPreview from "../assets/pritika-khatri-social-preview.jpg.asset.json";
 import poemRecitation from "../assets/poem-khursani.mp3.asset.json";
+import campusWide from "../assets/uc-berkeley-campanile.jpg.asset.json";
+import campusNarrow from "../assets/uc-berkeley-campanile-1400.jpg.asset.json";
 
 export const portfolio = {
   name: "Pritika Khatri",
@@ -25,6 +27,14 @@ export const portfolio = {
   headshot: headshot.url,
   resume: resume.url,
   socialPreview: socialPreview.url,
+  campus: {
+    src: campusWide.url,
+    srcSmall: campusNarrow.url,
+    alt: "Sather Tower, the campanile at UC Berkeley, rising above Memorial Glade on a clear day",
+    credit: "Coolcaesar",
+    creditUrl: "https://commons.wikimedia.org/wiki/File:Sather_Tower_from_Memorial_Glade.jpg",
+    license: "CC BY-SA 4.0",
+  },
   about: "I’m a public health leader from Dolakha, Nepal, with 16 years of experience across government, nonprofit, healthcare, and private-sector settings. My work spans adolescent and maternal health, mental health, health systems, and clinical research. Alongside this work, I write and recite poetry, compose music, and make time for travel and adventure.",
   education: [
     ["Doctor of Public Health", "University of California, Berkeley", "Ongoing"],
