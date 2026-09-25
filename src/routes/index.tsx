@@ -59,13 +59,18 @@ function HomePage() {
         <SectionHead number="01" eyebrow="About" title="A life shaped by service and curiosity." />
         <div className="about-grid">
           <p className="lead-copy">{portfolio.about}</p>
+          <div className="about-portrait"><img src={portfolio.headshot} alt="Portrait of Pritika Khatri" loading="lazy" /></div>
+        </div>
+        <div className="credentials-panel">
           <div>
-            <div className="about-portrait"><img src={portfolio.headshot} alt="Portrait of Pritika Khatri" loading="lazy" /></div>
             <p className="mini-heading">Education</p>
-            <div className="divide-y divide-border border-y border-border">
+            <div className="divide-y divide-border border-t border-border">
               {portfolio.education.map(([degree, institution, status]) => <div key={degree} className="education-row"><div><h3>{degree}</h3><p>{institution}</p></div>{status && <span>{status}</span>}</div>)}
             </div>
-            <div className="mt-9"><p className="mini-heading">Languages</p><p className="text-base text-muted-foreground">{portfolio.languages.join(" · ")}</p></div>
+          </div>
+          <div className="panel-side">
+            <p className="mini-heading">Languages</p>
+            <p className="panel-languages">{portfolio.languages.join(" · ")}</p>
           </div>
         </div>
       </section>
