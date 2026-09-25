@@ -1,10 +1,10 @@
 # Roadmap
 
 ## Open questions (hosting)
-- [ ] Answer: can the site be hosted on GitHub / GitHub Pages (code sync + static export + media committed in repo)?
-- [ ] Answer: does hosting on Cloudflare require paying for a custom domain?
-- [x] Domain chosen: pritikakhatri.com ($11.10/yr flat). Purchase card opened; awaiting confirmation in checkout.
-- [ ] After purchase: publish the project so the domain serves the site, and add both root and www.
+- [x] Answered: GitHub Pages is possible but needs the static rework (code sync via Project Settings → GitHub, static export, media committed in repo) and gives up any future backend.
+- [x] Answered: Cloudflare hosting is free; a custom domain is a separate registration fee either way.
+- [x] pritikakhatri.com purchased and registered; connected as primary, www redirects to it.
+- [ ] Publish the project so pritikakhatri.com actually serves the site.
 - [ ] Decide the hosting path, then prepare the project for it (static export, media in repo, base-path config) if the user chooses GitHub Pages or another static host.
 
 ## Waiting on user
