@@ -5,7 +5,8 @@
 - [x] Answered: Cloudflare hosting is free; a custom domain is a separate registration fee either way.
 - [x] pritikakhatri.com purchased and registered; connected as primary, www redirects to it.
 - [x] Published; pritikakhatri.com serves the site (200, correct title), /chatbot 200, www redirects to the root, media assets 200.
-- [ ] Decide the hosting path, then prepare the project for it (static export, media in repo, base-path config) if the user chooses GitHub Pages or another static host.
+- [x] GitHub connected; static rework done: media now lives in public/media/ (17 files), portfolio.ts references /media/ paths, vite.config.static.ts + `bun run build:static` + .github/workflows/deploy-pages.yml added.
+- [ ] User enables GitHub Pages: repo Settings → Pages → Source: "GitHub Actions". First push to main then deploys. Optional: point pritikakhatri.com DNS at Pages later.
 
 ## Done this pass
 - [x] Removed the empty About gap by flowing both supporting paragraphs directly beneath the lead, beside the portrait on desktop.
