@@ -52,10 +52,6 @@ function HomePage() {
               <a href={portfolio.linkedin} target="_blank" rel="noreferrer">LinkedIn <ExternalLink size={13} /></a>
             </div>
           </div>
-          <div className="hero-meta">
-            <p className="hero-context">{portfolio.context}</p>
-            <p className="hero-credit">Campus photograph: <a href={portfolio.campus.creditUrl} target="_blank" rel="noreferrer">{portfolio.campus.credit}</a> · {portfolio.campus.license}</p>
-          </div>
         </div>
       </section>
 
@@ -63,13 +59,18 @@ function HomePage() {
         <SectionHead number="01" eyebrow="About" title="A life shaped by service and curiosity." />
         <div className="about-grid">
           <p className="lead-copy">{portfolio.about}</p>
+          <div className="about-portrait"><img src={portfolio.headshot} alt="Portrait of Pritika Khatri" loading="lazy" /></div>
+        </div>
+        <div className="credentials-panel">
           <div>
-            <div className="about-portrait"><img src={portfolio.headshot} alt="Portrait of Pritika Khatri" loading="lazy" /></div>
             <p className="mini-heading">Education</p>
-            <div className="divide-y divide-border border-y border-border">
+            <div className="divide-y divide-border border-t border-border">
               {portfolio.education.map(([degree, institution, status]) => <div key={degree} className="education-row"><div><h3>{degree}</h3><p>{institution}</p></div>{status && <span>{status}</span>}</div>)}
             </div>
-            <div className="mt-9"><p className="mini-heading">Languages</p><p className="text-base text-muted-foreground">{portfolio.languages.join(" · ")}</p></div>
+          </div>
+          <div className="panel-side">
+            <p className="mini-heading">Languages</p>
+            <p className="panel-languages">{portfolio.languages.join(" · ")}</p>
           </div>
         </div>
       </section>
@@ -99,7 +100,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="site-container page-section" aria-labelledby="writing-heading">
+      <section className="site-container page-section writing-section" aria-labelledby="writing-heading">
         <div id="writing-heading"><SectionHead number="04" eyebrow="Selected writing" title="Research and perspectives." /></div>
         <div className="reading-list">{portfolio.writing.map((item) => <article key={item.title}><span className="status-chip">{item.label}</span><h3>{item.title}</h3><p>{item.authors}</p></article>)}</div>
         <details className="more-writing"><summary>More research <span aria-hidden="true">+</span></summary><ul>{portfolio.moreWriting.map((item) => <li key={item}>{item}</li>)}</ul></details>
@@ -122,7 +123,7 @@ function HomePage() {
           <div><p className="contact-copy">For conversations about public health, adolescent health research, community partnerships, or creative collaboration, I’d love to hear from you.</p><div className="contact-links"><a href={`mailto:${portfolio.email}`}><Mail size={18} />{portfolio.email}</a><a href={portfolio.linkedin} target="_blank" rel="noreferrer">LinkedIn <ExternalLink size={16} /></a></div></div>
         </div>
       </section>
-      <footer className="site-container flex flex-col gap-2 border-t border-border py-7 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between"><span>Pritika Khatri</span><span>© {new Date().getFullYear()}</span></footer>
+      <footer className="site-container flex flex-col gap-2 border-t border-border py-7 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between"><span>Pritika Khatri</span><span className="photo-credit">Campus photograph: <a href={portfolio.campus.creditUrl} target="_blank" rel="noreferrer">{portfolio.campus.credit}</a> · {portfolio.campus.license}</span><span>© {new Date().getFullYear()}</span></footer>
     </>
   );
 }
